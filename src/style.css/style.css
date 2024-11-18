@@ -1,0 +1,417 @@
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-around; /* Espaçar logo e menu */
+    align-items: center; /* Alinhar verticalmente */
+    padding: 40px 40px; /* Adicionar espaçamento */
+    background-color: #000000; /* Cor de fundo */
+  }
+  
+  /* Container da logo */
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+/* Menu (ul) estilizado com flexbox */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Itens do menu */
+  nav ul li {
+    margin: 0 45px;
+  }
+  
+  /* Links do menu */
+  nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: 'Outfit', sans-serif; /* Aplicando a fonte Outfit */
+    position: relative; /* Necessário para o efeito de sublinhado */
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Efeito hover com sublinhado */
+  nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007FFF; /* Cor do sublinhado */
+    transition: width 0.3s ease;
+  }
+  
+  nav ul li a:hover::after {
+    width: 100%; /* Faz a linha crescer ao passar o cursor */
+  }
+  
+  nav ul li a:hover {
+    color: #ffffff; /* Muda a cor do texto ao passar o cursor */
+  }
+
+  /*Banner */
+
+.banner {
+  height: 700px; /* Altura do banner */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #007FFF 10%, #000000 40%, #000000 50%);
+  position: relative;
+}
+
+.banner-text {
+  position: absolute;
+  left: 30%; /* Alinha o texto um pouco à esquerda do centro */
+  transform: translateX(-50%);
+  text-align: left; /* Texto alinhado à esquerda */
+  color: #fffefe;
+
+}
+
+.banner-text h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 64px;
+  margin-bottom: 10px;
+  margin: 0; /* Remove margens padrão */
+  line-height: 1; /* Reduz a altura da linha para o tamanho da fonte */
+  font-weight: bold; /* (Opcional) Torna o texto mais destacado */
+}
+
+.banner-text p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  color: #f8f8f8;
+  margin: 0; /* Remove margens padrão */
+  line-height: 1; /* Reduz a altura da linha para o tamanho da fonte */
+}
+/* Botão estilizado */
+.banner-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 40px;
+  font-size: 16px;
+  font-family: 'Outfit', sans-serif;
+  color: white;
+  background: linear-gradient(90deg, #007bff, #8000ff); /* Gradiente azul e roxo */
+  border: none;
+  cursor: pointer;
+  border-radius: 20px 0px 20px 0px; /* Bordas arredondadas somente nas superiores */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Efeito hover */
+.banner-button:hover {
+  background: linear-gradient(90deg, #0056b3, #5e00b3); /* Escurecendo o gradiente */
+  transform: scale(1.05); /* Leve aumento no tamanho */
+}
+
+/* Efeito ao pressionar */
+.banner-button:active {
+  transform: scale(0.95); /* Leve redução no tamanho */
+}
+
+.about, .projects, .team {
+  clear: both; /* Garante que os elementos subsequentes não invadam */
+}
+/* About.*/
+
+.about {
+  height: 500px; /* Mesma altura do banner */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: #000000; /* Cor de fundo suave */
+}
+
+.about-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Espaço entre o título e o texto */
+}
+
+.about-title {
+  font-size: 60px; /* Tamanho grande para destaque */
+  background: linear-gradient(90deg, #007bff, #8000ff); /* Gradiente azul-roxo */
+  -webkit-background-clip: text; /* Aplica gradiente ao texto */
+  -webkit-text-fill-color: transparent; /* Faz o fundo transparente */
+  font-weight: bold;
+}
+
+.about-text {
+  font-size: 18px;
+  max-width: 400px; /* Limita a largura do texto */
+  color: #ffffff; /* Cor do texto */
+  line-height: 1.5; /* Melhor legibilidade */
+  padding: 20px;
+}
+
+/* src/components/About.css */
+
+.about-values {
+  width: 80%;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+.values-title {
+  font-size: 24px;
+  color: #0046B9;
+  text-align: left; /* Centraliza o título */
+  margin-bottom: 20px; /* Espaçamento entre o título e as colunas */
+  font-family: 'Outfit', sans-serif; /* Garantindo consistência de fonte */
+}
+
+.values-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.values-column {
+  width: 45%; /* Largura das colunas */
+}
+
+.values-column h3 {
+  font-size: 20px;
+  color: #0046B9;
+  margin-bottom: 10px;
+}
+
+.values-column p {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Projects */
+
+.projects {
+  height: 300px; /* Mesma altura dos outros componentes */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #ffffff; /* Fundo suave */
+
+  min-height: 300px;
+}
+
+
+.projects-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.projects-title {
+  font-size: 50px;
+  background: linear-gradient(90deg, #007bff, #8000ff); /* Gradiente azul-roxo */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.projects-description {
+  font-size: 18px;
+  color: #000000;
+  max-width: 400px; /* Limita a largura do texto */
+}
+
+.projects-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.project-card {
+  width: 80%;
+  background: #000; /* Fundo preto */
+  border-radius: 20px; /* Bordas arredondadas */
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  color: white; /* Texto branco */
+}
+
+.project-logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-image {
+  max-width: 300px; /* Tamanho da logo */
+  max-height: 300px;
+  object-fit: contain; /* Ajusta para caber na caixa */
+}
+
+.project-details {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-text {
+  font-size: 36px;
+  line-height: 1.5;
+}
+
+.project-image {
+  flex: 1;
+  text-align: right; /* Alinha a imagem à direita */
+}
+
+.image {
+  width: 400px;
+  height: 400px; /* Quadrada */
+  object-fit: cover; /* Corta a imagem para caber */
+  border-radius: 8px; /* Bordas arredondadas */
+}
+/* Botão estilizado */
+.project-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 40px;
+  font-size: 16px;
+  font-family: 'Outfit', sans-serif;
+  color: black;
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px 0px 20px 0px; /* Bordas arredondadas somente nas superiores */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Efeito hover */
+.project-button:hover {
+  color: black;
+  background: #ffffff;
+  transform: scale(1.05); /* Leve aumento no tamanho */
+}
+
+/* Efeito ao pressionar */
+.project-button:active {
+  transform: scale(0.95); /* Leve redução no tamanho */
+}
+
+/* Team */
+.team {
+  padding: 40px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.team-title {
+  font-size: 48px;
+  background: linear-gradient(90deg, #007bff, #8000ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.team-description {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.team-card {
+  background: #f8f8f8;
+  width: 300px;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px
+}
+
+.member-photo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.member-info {
+  margin-left: 15px;
+  text-align: left;
+}
+
+.member-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 5px;
+}
+
+.member-role {
+  font-size: 16px;
+  color: #777;
+  margin: 0 0 10px;
+}
+
+.member-socials {
+  display: flex;
+  gap: 10px;
+}
+
+.social-link {
+  text-decoration: none;
+  font-size: 14px;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #8000ff;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(to bottom, #000000, #000000);
+  color: white;
+}
+
+.footer-logo {
+  width: 240px; /* Ajuste o tamanho da logo */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.footer-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+}
