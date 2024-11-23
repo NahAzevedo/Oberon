@@ -1,5 +1,5 @@
 # `Oberon`
-Oberon é um projeto focado em inovação, com soluções tecnológicas para melhorar a eficiência e simplificar processos. O sistema foi desenvolvido com o intuito de aplicar conceito <br>
+Esse é o site da nossa equipe. <br>
 
 ## `Tecnologias Utilizadas`
 Frontend : React, CSS (com Flexbox e Grid), JavaScript <br>
