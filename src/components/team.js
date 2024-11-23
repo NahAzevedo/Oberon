@@ -1,49 +1,54 @@
 import React from 'react';
 import './../style.css/style.css'; // Certifique-se de que há um arquivo CSS importado
+import May from './../image/May.jpeg';
+import Isa from './../image/Isa.jpeg';
+import Nay from './../image/Nay.jpg';
+import Rebe from './../image/Rebe.png';
+import LinkedIn from './../image/linkedin.svg'; // Ícone do LinkedIn
+import Instagram from './../image/instagram.svg'; // Ícone do GitHub
 
 const Team = () => {
   const teamMembers = [
     {
       name: 'Isabelle Hondo',
-      role: 'Desenvolvedor Frontend',
-      photo: 'https://via.placeholder.com/100',
+      role: 'Desenvolvedora Full Stack',
+      photo: Isa,
       socials: [
-        { name: 'LinkedIn', link: '#' },
-        { name: 'GitHub', link: '#' },
-        
+        { icon: LinkedIn, link: '#' },
+        { icon: Instagram, link: '#' },
       ],
     },
     {
       name: 'Mayara Karen',
-      role: 'Gerente de Projetos',
-      photo: 'https://via.placeholder.com/100',
+      role: 'Gerente de Projetos e Analista de Dados',
+      photo: May,
       socials: [
-        { name: 'LinkedIn', link: '#' },
-        { name: 'GitHub', link: '#' },
+        { icon: LinkedIn, link: '#' },
+        { icon: Instagram, link: '#' },
       ],
     },
     {
       name: 'Nayara Azevedo',
-      role: 'Desenvolvedor Frontend',
-      photo: 'https://via.placeholder.com/100',
+      role: 'Desenvolvedora Front-end',
+      photo: Nay,
       socials: [
-        { name: 'LinkedIn', link: '#' },
-        { name: 'GitHub', link: '#' },
+        { icon: LinkedIn, link: '#' },
+        { icon: Instagram, link: '#' },
       ],
     },
     {
       name: 'Rebeca Baruch',
-      role: 'UI/UX Designer', 
-      photo: 'https://via.placeholder.com/100',
+      role: 'UI/UX Designer e Desenvolvedora Full Stack',
+      photo: Rebe,
       socials: [
-        { name: 'LinkedIn', link: '#' },
-        { name: 'GitHub', link: '#' },
+        { icon: LinkedIn, link: '#' },
+        { icon: Instagram, link: '#' },
       ],
     },
   ];
 
   return (
-    <div className="team">
+    <section className="team" id='team'>
       <div className="team-header">
         <h2 className="team-title">TEAM</h2>
         <p className="team-description">Conheça os membros da nossa equipe</p>
@@ -60,15 +65,20 @@ const Team = () => {
               <div className="member-socials">
                 {member.socials.map((social, idx) => (
                   <a key={idx} href={social.link} className="social-link">
-                    {social.name}
+                    <img
+                      src={social.icon}
+                      alt={`${member.name} no ${social.link}`}
+                      className="social-icon"
+                    />
                   </a>
                 ))}
               </div>
             </div>
           </div>
         ))}
+        
       </div>
-    </div>
+    </section>
   );
 };
 

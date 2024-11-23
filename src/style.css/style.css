@@ -59,6 +59,42 @@ nav ul {
     color: #ffffff; /* Muda a cor do texto ao passar o cursor */
   }
 
+  /* Responsividade */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column; /* Coloca logo e menu em coluna */
+    align-items: center;
+  }
+
+  .logo {
+    max-width: 120px; /* Reduz o tamanho da logo em telas menores */
+    margin-bottom: 15px;
+  }
+
+  nav ul {
+    flex-direction: column; /* Menu em coluna */
+    gap: 15px; /* Ajusta o espaçamento entre os itens */
+  }
+
+  nav ul li a {
+    font-size: 16px; /* Texto menor no menu */
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    gap: 10px;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+  }
+
+  .logo {
+    max-width: 100px; /* Reduz ainda mais a logo */
+  }
+}
+
   /*Banner */
 
 .banner {
@@ -70,12 +106,30 @@ nav ul {
   position: relative;
 }
 
+.banner-content {
+  position: relative;
+  display: flex;
+  align-items: center; /* Centraliza verticalmente a logo e o texto */
+  justify-content: center; /* Centraliza horizontalmente os elementos no banner */
+  gap: 40px; /* Espaço entre a logo e o texto */
+  text-align: left; /* Garante que o texto seja alinhado à esquerda */
+}
+
+
+/* Logo */
+.banner-logo {
+  width: 500px; /* Tamanho padrão da logo */
+  height: auto;
+  max-width: 100%;
+  margin-bottom: -9.8%;
+}
+
 .banner-text {
   position: absolute;
-  left: 30%; /* Alinha o texto um pouco à esquerda do centro */
-  transform: translateX(-50%);
+  transform: translateX(-100%);
   text-align: left; /* Texto alinhado à esquerda */
   color: #fffefe;
+  max-width: 500px; /* Limita a largura do texto */
 
 }
 
@@ -84,7 +138,7 @@ nav ul {
   font-size: 64px;
   margin-bottom: 10px;
   margin: 0; /* Remove margens padrão */
-  line-height: 1; /* Reduz a altura da linha para o tamanho da fonte */
+  line-height: 1.2; /* Reduz a altura da linha para o tamanho da fonte */
   font-weight: bold; /* (Opcional) Torna o texto mais destacado */
 }
 
@@ -92,7 +146,7 @@ nav ul {
   font-family: 'Outfit', sans-serif;
   font-size: 18px;
   color: #f8f8f8;
-  margin: 0; /* Remove margens padrão */
+  margin: 10px 0; /* Espaçamento entre o título e o parágrafo */
   line-height: 1; /* Reduz a altura da linha para o tamanho da fonte */
 }
 /* Botão estilizado */
@@ -124,10 +178,92 @@ nav ul {
 .about, .projects, .team {
   clear: both; /* Garante que os elementos subsequentes não invadam */
 }
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .banner {
+    height: 600px; /* Reduz a altura */
+  }
+
+  .banner-logo {
+    width: 350px; /* Diminui a largura da logo */
+    margin-bottom: 0;
+    display: block; /* Garante que a logo seja exibida corretamente */
+  }
+
+  .banner-text h1 {
+    font-size: 48px; /* Tamanho menor para o texto */
+  }
+
+  .banner-text p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 500px; /* Altura ainda menor */
+  }
+
+  .banner-content {
+    flex-direction: column; /* Texto abaixo da logo */
+    gap: 20px; /* Menor espaçamento */
+  }
+
+  .banner-logo {
+    display: none; /* Oculta a logo em telas menores */
+  }
+
+  .banner-text {
+    position: absolute;
+    transform: translateX(0%);
+    text-align: left; /* Texto alinhado à esquerda */
+
+  
+  }
+
+  .banner-text h1 {
+    font-size: 36px;
+
+  }
+
+  .banner-text p {
+    font-size: 14px;
+  }
+
+  .banner-button {
+    padding: 8px 30px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    height: auto; /* Altura ajusta automaticamente */
+    padding: 20px; /* Adiciona espaçamento */
+  }
+
+  .banner-logo {
+    display: none; /* Oculta a logo em telas menores */
+  }
+
+  .banner-text h1 {
+    font-size: 28px;
+  }
+
+  .banner-text p {
+    font-size: 12px;
+  }
+
+  .banner-button {
+    padding: 6px 20px;
+    font-size: 12px;
+  }
+}
 /* About.*/
 
 .about {
-  height: 500px; /* Mesma altura do banner */
+  min-height: 500px; /* Mesma altura do banner */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -140,31 +276,31 @@ nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* Espaço entre o título e o texto */
+  gap: 120px; /* Espaço entre o título e o texto */
 }
 
 .about-title {
-  font-size: 60px; /* Tamanho grande para destaque */
-  background: linear-gradient(90deg, #007bff, #8000ff); /* Gradiente azul-roxo */
+  font-size: 80px; /* Tamanho grande para destaque */
+  background: linear-gradient(#711BFF 50%, #1D8DFF); /* Gradiente azul-roxo */
   -webkit-background-clip: text; /* Aplica gradiente ao texto */
   -webkit-text-fill-color: transparent; /* Faz o fundo transparente */
   font-weight: bold;
+  font-weight: 700; /* Aumenta o peso da fonte */
 }
 
 .about-text {
   font-size: 18px;
-  max-width: 400px; /* Limita a largura do texto */
+  max-width: 600px; /* Limita a largura do texto */
   color: #ffffff; /* Cor do texto */
   line-height: 1.5; /* Melhor legibilidade */
   padding: 20px;
 }
 
-/* src/components/About.css */
 
 .about-values {
-  width: 80%;
+  width: 70%;
   background: white;
-  padding: 20px;
+  padding: 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   
 }
@@ -181,6 +317,7 @@ nav ul {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+
 }
 
 .values-column {
@@ -197,18 +334,101 @@ nav ul {
   font-size: 16px;
   color: #333;
 }
+/* Responsividade: A partir de 1024px */
+@media (max-width: 1024px) {
+  .about-title {
+    font-size: 60px; /* Reduz o tamanho do título em telas menores */
+  }
+
+  .about-text {
+    font-size: 16px; /* Reduz o tamanho do texto */
+    padding: 10px;
+  }
+
+  .about-values {
+    width: 90%; /* Aumenta a largura dos valores */
+    padding: 30px;
+  }
+
+  .values-column {
+    width: 48%; /* Ajusta o tamanho das colunas */
+  }
+}
+
+/* Responsividade para telas pequenas (até 768px) */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Coloca os itens em coluna */
+    gap: 30px;
+  }
+
+  .about-title {
+    font-size: 48px; /* Reduz ainda mais o tamanho do título */
+    text-align: center; /* Centraliza o título */
+  }
+
+  .about-text {
+    font-size: 14px; /* Ajusta o tamanho do texto */
+    padding: 15px;
+    text-align: center; /* Centraliza o texto */
+  }
+
+  .about-values {
+    width: 100%; /* Faz o bloco de valores ocupar toda a largura */
+    padding: 25px;
+  }
+
+  .values-container {
+    flex-direction: column; /* Empilha as colunas em dispositivos pequenos */
+    gap: 15px;
+  }
+
+  .values-column {
+    width: 100%; /* Faz as colunas ocuparem toda a largura */
+  }
+}
+
+/* Responsividade para telas muito pequenas (até 480px) */
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 36px; /* Título menor */
+    text-align: center;
+  }
+
+  .about-text {
+    font-size: 12px; /* Texto menor */
+    padding: 10px;
+  }
+
+  .about-values {
+    width: 100%; /* Ocupa toda a largura */
+    padding: 20px;
+  }
+
+  .values-column {
+    width: 100%; /* Colunas ocupando toda a largura */
+  }
+
+  .values-column h3 {
+    font-size: 18px; /* Tamanho menor do título das colunas */
+  }
+
+  .values-column p {
+    font-size: 14px; /* Tamanho menor do texto das colunas */
+  }
+}
+
 
 /* Projects */
 
 .projects {
-  height: 300px; /* Mesma altura dos outros componentes */
+  background-color: #ffffff; /* Fundo suave */
+  min-height: 300px; /* Use `min-height` para evitar cortes */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 20px;
-  background-color: #ffffff; /* Fundo suave */
-
-  min-height: 300px;
+  overflow: hidden; /* Garante que o conteúdo não "vaze" */
 }
 
 
@@ -220,7 +440,7 @@ nav ul {
 }
 
 .projects-title {
-  font-size: 50px;
+  font-size: 70px;
   background: linear-gradient(90deg, #007bff, #8000ff); /* Gradiente azul-roxo */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -230,7 +450,7 @@ nav ul {
 .projects-description {
   font-size: 18px;
   color: #000000;
-  max-width: 400px; /* Limita a largura do texto */
+  max-width: 500px; /* Limita a largura do texto */
 }
 
 .projects-content {
@@ -239,53 +459,54 @@ nav ul {
   align-items: center;
   margin-top: 20px;
 }
-
 .project-card {
-  width: 80%;
-  background: #000; /* Fundo preto */
+  width: 40%;
+  background: #ffffff;
   border-radius: 20px; /* Bordas arredondadas */
   padding: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* Espaça os elementos */
+  align-items: center; /* Centraliza verticalmente os elementos */
   gap: 20px;
-  color: white; /* Texto branco */
+  color: black; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Sombreamento */
 }
 
 .project-logo {
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start; /* Alinha a imagem à esquerda */
+  align-items: center; /* Centraliza verticalmente dentro da coluna */
 }
-
 .logo-image {
-  max-width: 300px; /* Tamanho da logo */
-  max-height: 300px;
-  object-fit: contain; /* Ajusta para caber na caixa */
+  max-width: 150px; /* Tamanho da logo */
+  max-height: 150px;
+  object-fit: contain; /* Ajusta para caber no espaço sem cortar */
 }
 
 .project-details {
   flex: 3;
   display: flex;
   flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente o texto */
   gap: 10px;
 }
 
 .project-text {
-  font-size: 36px;
+  font-size: 22px;
   line-height: 1.5;
 }
 
 .project-image {
   flex: 1;
-  text-align: right; /* Alinha a imagem à direita */
+  text-align: left; /* Alinha a imagem à direita */
 }
 
 .image {
-  width: 400px;
-  height: 400px; /* Quadrada */
+  max-width: 400px;
+  max-height: 400px; /* Quadrada */
   object-fit: cover; /* Corta a imagem para caber */
-  border-radius: 8px; /* Bordas arredondadas */
+  border-radius: 10px; /* Bordas arredondadas */
 }
 /* Botão estilizado */
 .project-button {
@@ -294,8 +515,8 @@ nav ul {
   padding: 10px 40px;
   font-size: 16px;
   font-family: 'Outfit', sans-serif;
-  color: black;
-  background: #ffffff;
+  color: #ffffff;
+  background: black;
   border: none;
   cursor: pointer;
   border-radius: 20px 0px 20px 0px; /* Bordas arredondadas somente nas superiores */
@@ -304,8 +525,8 @@ nav ul {
 
 /* Efeito hover */
 .project-button:hover {
-  color: black;
-  background: #ffffff;
+  color: #ffffff;
+  background: black;
   transform: scale(1.05); /* Leve aumento no tamanho */
 }
 
@@ -313,27 +534,210 @@ nav ul {
 .project-button:active {
   transform: scale(0.95); /* Leve redução no tamanho */
 }
+/* Trabalhos Futuros */
+.future-projects {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 30px;
+  width: 20%; /* Referente a largura total espaço */
+}
 
+.future-project-card {
+  background: #282FD9; /* Fundo azul para destacar */
+  color: white;
+  padding: 25px;
+  padding-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  
+}
+
+.future-project-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.future-project-card p {
+  font-size: 14px;
+}
+.future-project-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #007bff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.future-project-link:hover {
+  background-color: #0056b3;
+}
+
+/* Responsividade para telas de até 1280px  */
+@media (max-width: 1280px) {
+  .projects-title {
+    font-size: 50px; /* Tamanho reduzido do título */
+  }
+
+  .projects-description {
+    font-size: 16px;
+  }
+
+  .project-card {
+    width: 45%; /* Ajusta a largura dos cards */
+    padding: 30px; /* Ajusta o padding */
+  }
+  .image {
+    width: 200px; /* Ajusta o tamanho da imagem */
+    height: 200px;
+  }
+
+  .future-projects {
+    width: 40%; /* Ocupa toda a largura */
+  }
+}
+/* Responsividade para telas de até 1024px (tablets e telas médias) */
+@media (max-width: 1024px) {
+  .projects-title {
+    font-size: 50px; /* Tamanho reduzido do título */
+  }
+
+  .projects-description {
+    font-size: 16px;
+  }
+
+  .project-card {
+    width: 45%; /* Ajusta a largura dos cards */
+    padding: 30px; /* Ajusta o padding */
+  }
+  .image {
+    width: 200px; /* Ajusta o tamanho da imagem */
+    height: 200px;
+  }
+
+  .future-projects {
+    width: 80%; /* Ocupa toda a largura */
+  }
+}
+
+/* Responsividade para telas de até 768px (dispositivos móveis) */
+@media (max-width: 768px) {
+  .projects-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .projects-title {
+    font-size: 40px; /* Título ainda menor em telas pequenas */
+    text-align: center; /* Centraliza o título */
+  }
+
+  .projects-description {
+    font-size: 14px;
+    text-align: center; /* Centraliza o texto */
+  }
+
+  .projects-content {
+    flex-direction: column; /* Empilha os cards verticalmente */
+  }
+
+  .project-card {
+    width: 90%; /* Ajusta os cards para ocuparem mais largura */
+    padding: 20px; /* Ajusta o padding */
+    margin-bottom: 20px; /* Adiciona espaçamento inferior */
+  }
+
+  .project-text {
+    font-size: 18px; /* Reduz o tamanho do texto */
+  }
+
+  .image {
+    width: 250px; /* Ajusta o tamanho da imagem */
+    height: 250px;
+  }
+
+  .project-button {
+    width: 100%; /* Faz o botão ocupar toda a largura */
+    padding: 10px;
+  }
+
+  .future-projects {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .future-project-card {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* Responsividade para telas muito pequenas (dispositivos móveis pequenos) */
+@media (max-width: 480px) {
+  .projects-title {
+    font-size: 30px; /* Título bem menor em dispositivos móveis pequenos */
+  }
+
+  .projects-description {
+    font-size: 12px;
+  }
+
+  .project-card {
+    width: 100%; /* Os cards ocupam toda a largura */
+    padding: 15px; /* Menos padding */
+    margin: 10px 0; /* Espaçamento entre os cards */
+  }
+
+  .image {
+    width: 150px; /* Reduz o tamanho da imagem */
+    height: 150px;
+  }
+
+  .project-button {
+    width: 100%;
+    padding: 8px 20px;
+  }
+
+  .future-project-card {
+    width: 100%;
+    padding: 15px
+  }
+}
 /* Team */
 .team {
-  padding: 40px 20px;
-  background-color: #ffffff;
-  text-align: center;
+  overflow: hidden; /* Garante que o conteúdo não "vaze" */
+  min-height: 600px; /* Mesma altura dos outros componentes */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #000000;
+
 }
 
 .team-title {
-  font-size: 48px;
-  background: linear-gradient(90deg, #007bff, #8000ff);
+  display: flex;
+  gap: 20px;
+  font-size: 60px;
+  background: linear-gradient(900deg, #007bff, #8000ff); /* Gradiente azul-roxo */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
   margin-bottom: 10px;
+  text-align: left; /* Alinha a imagem à esquerda */
+  margin-left: 70px;
 }
 
 .team-description {
-  font-size: 18px;
-  color: #555;
+  font-size: 24px;
+  color: #ffffff;
   margin-bottom: 40px;
+  text-align: left; /* Alinha a imagem à esquerda */
+  margin-left: 70px;
 }
 
 .team-members {
@@ -344,13 +748,14 @@ nav ul {
 }
 
 .team-card {
-  background: #f8f8f8;
+  background: black;
   width: 300px;
   border-radius: 20px;
   padding: 20px;
   display: flex;
   align-items: center;
-  box-shadow: 0px
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Sombra */
+  
 }
 
 .member-photo img {
@@ -369,29 +774,42 @@ nav ul {
   font-size: 20px;
   font-weight: bold;
   margin: 0 0 5px;
+  color: #ffffff;
 }
 
 .member-role {
   font-size: 16px;
-  color: #777;
+  color: #ffffff;
   margin: 0 0 10px;
 }
 
 .member-socials {
   display: flex;
-  gap: 10px;
+  gap: 10px; /* Espaço entre os ícones */
+  margin-top: 10px;
 }
 
 .social-link {
-  text-decoration: none;
-  font-size: 14px;
-  color: #007bff;
-  transition: color 0.3s ease;
+  display: inline-block;
+  width: 24px; /* Tamanho do ícone */
+  height: 24px;
 }
 
-.social-link:hover {
-  color: #8000ff;
+.social-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Garante que o ícone não seja cortado */
 }
+
+.divider {
+  width: 70%; /* Largura da linha (ajustável) */
+  height: 1px; /* Altura fina para a linha */
+  margin: 100px; /* Espaçamento acima e abaixo */
+  background-color: #ccc; /* Cor da linha (pode ser ajustada) */
+  opacity: 0.5; /* Torna a linha mais sutil */
+
+}
+
 
 .footer {
   display: flex;
@@ -402,6 +820,7 @@ nav ul {
   padding: 40px 20px;
   background: linear-gradient(to bottom, #000000, #000000);
   color: white;
+  min-height: 300px; /* Mesma altura dos outros componentes */
 }
 
 .footer-logo {

@@ -5,7 +5,9 @@ import logo from './../image/logo.svg'
 
 const Footer = () => {
   return (
+    
     <footer className="footer">
+      <div className="divider"></div> {/* Linha fina de separação */} 
       <div className="footer-content">
         <img
           src={logo} // Substitua pelo caminho correto da logo
