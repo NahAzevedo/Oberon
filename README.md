@@ -1,8 +1,8 @@
 # `Oberon`
-Oberon é um projeto focado em inovação, com soluções tecnológicas para melhorar a eficiência e simplificar processos. O sistema foi desenvolvido com o intuito de aplicar conceito
+Oberon é um projeto focado em inovação, com soluções tecnológicas para melhorar a eficiência e simplificar processos. O sistema foi desenvolvido com o intuito de aplicar conceito <br>
 
 ## `Tecnologias Utilizadas`
-Frontend : React, CSS (com Flexbox e Grid), JavaScript
+Frontend : React, CSS (com Flexbox e Grid), JavaScript <br>
 Design : UI/UX moderno, com foco em responsividade e acessibilidade
 
 In the project directory, you can run:
